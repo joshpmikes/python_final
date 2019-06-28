@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Show Product by id</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif,
+        }
+        .head{
+            background-color: black;
+            width: 1720px;
+            position: fixed;
+        }
+        th{
+            margin-left: 80px; 
+        }
+        .head h1{
+            color: white;
+            display: inline-block;
+        }
+        .head a{
+            color: white;
+            padding-left: 1330px;
+            text-decoration: none;
+        }
+        .imgs{
+            display: inline-block;
+            width: 300px;
+            height: 400px;
+            border: 1px solid black;
+            margin-left: 20px;
+        }
+        .desc{
+            display: inline-block;
+            vertical-align: top;
+            height: 450px;
+            width: 400px;
+            border: 1px solid black;            
+            margin-left: 50px;
+        }
+        .selection{
+            margin-top: 10px;
+            margin-left: 660px;
+            display: block;
+        }
+        .container{
+            padding-top: 100px;
+            margin-left: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="head">
+        <h1>Dojo eCommerce</h1>
+        <a href="/carts">Shopping Cart ({{cart|length}})</a>
+    </div>
+    <div class="container">
+        <a href="/products">Go Back</a>
+        <h1>{{product.name}}</h1>
+        <div class="imgs">
+            <img src="">
+            <img src="">
+            <img src="">
+            <img src="">
+            <img src="">
+            <img src="">
+        </div>
+        <div class="desc">
+            <p>Suspendisse eu enim iaculis, facilisis augue a, vulputate metus. Mauris hendrerit posuere porttitor. Nulla interdum hendrerit scelerisque. Morbi feugiat consectetur magna, vel rhoncus felis pulvinar vel. Cras ut elementum mauris. In sodales felis sollicitudin, malesuada ipsum sed, euismod ex. Proin quis elementum purus. Integer euismod, felis ut sollicitudin tincidunt, dolor turpis dapibus ipsum, sed scelerisque quam mauris eget felis. Suspendisse potenti. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris efficitur, mi eget ullamcorper commodo, mauris eros ullamcorper quam, vestibulum convallis erat neque lacinia lorem. Curabitur nec odio id lorem porttitor aliquet. Praesent tellus risus, elementum at leo in, mattis imperdiet erat. Maecenas pharetra, nisi vel finibus sollicitudin, dui diam pulvinar massa, ut blandit urna ex non risus. Pellentesque euismod ultrices sem, ac dictum dui accumsan vitae.</p>
+        </div>
+        <select class="selection">
+
+                <option></option>
+
+            </select>
+        <div class="similar">
+            <h2>Similar Items</h2>
+
+            <img src="">
+
+        </div>
+    </div>
+
+</body>
+</html>

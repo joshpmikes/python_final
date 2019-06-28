@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cart</title>
+    <style>
+        
+    body{
+        font-family: Arial, Helvetica, sans-serif,
+    }
+    .head{
+        background-color: black;
+        position: fixed;
+        width: 1720px;
+    }
+    .info{
+        margin-left: 225px;
+    }
+    .info th{
+        padding-left: 200px; 
+    }
+    .head h1{
+        color: white;
+        display: inline-block;
+    }
+    .head a{
+        color: white;
+        text-decoration: none;
+        padding-left: 1330px;
+    }
+    .info{
+        padding-top: 100px;
+    }
+
+    .tableres a{
+        background-color: green;
+        color: white;
+        border: 1px solid black;
+        text-decoration: none;
+        padding: 5px;
+    }
+
+    .tableres{
+        text-align: right;
+    }
+
+    .pay{
+        text-decoration: none;
+        background-color: blue;
+        border: 1px solid black;
+        color: white;
+        margin-top: 5px;
+        margin-left: 200px;
+        display: block;
+        padding: 5px;
+    }
+
+    .entries{
+        width: 500px;
+        margin-left: 15px;
+    }
+    .entries input{
+        align-items: right;
+    }
+    .entries label{
+
+        margin-left: 20px;
+        text-align: right;
+    }
+    </style>
+</head>
+<body>
+    <div class="head">
+        <h1>Dojo eCommerce</h1>
+        <a href="/carts">Shopping Cart ({{cart|length}})</a>
+    </div>
+    <div >
+        <table class="info">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>  </td>
+                    <td>  </td>
+                    <td>  </td>
+                    <td>  </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="tableres">
+        <p>Total: $</p>
+        <a href="/products">Continue Shopping</a>
+    </div>
+    <div class="entries">
+        <form action="createorder" method="POST">
+            {%csrf_token%}
+            <h2>Shipping Information</h2>
+            <label for="fname">First Name: </label>
+            <input type="text" name="fname"><br><br>
+            <label for="lname">Last Name: </label>
+            <input type="text" name="lname"><br><br>
+            <label for="address">Address: </label>
+            <input type="text" name="address"><br><br>
+            <label for="address2">Address2: </label>
+            <input type="text" name="address2"><br><br>
+            <label for="city">City: </label>
+            <input type="text" name="city"><br><br>
+            <label for="state">State: </label>
+            <input type="text" name="state"><br><br>
+            <label for="zip">Zipcode: </label>
+            <input type="text" name="zip">
+            <h2>Billing Information</h2>
+            <input type="checkbox" name="checker">
+            <label for="checker">Same as Shipping</label><br><br>
+            <label for="fname_bill">First Name: </label>
+            <input type="text" name="fname_bill"><br><br>
+            <label for="lname_bill">Last Name: </label>
+            <input type="text" name="lname_bill"><br><br>
+            <label for="address_bill">Address: </label>
+            <input type="text" name="address_bill"><br><br>
+            <label for="address2_bill">Address2: </label>
+            <input type="text" name="address2_bill"><br><br>
+            <label for="city_bill">City: </label>
+            <input type="text" name="city_bill"><br><br>
+            <label for="state_bill">State: </label>
+            <input type="text" name="state_bill"><br><br>
+            <label for="zip_bill">Zipcode: </label>
+            <input type="text" name="zip_bill"><br><br>
+            <label for="card">Card: </label>
+            <input type="text" name="card"><br><br>
+            <label for="security">Security Code: </label>
+            <input type="text" name="security"><br><br>
+            <label for="expdate">Expiration: </label>
+            <input type="month" name="expdate">
+
+            <input class="pay" type="submit" value="Pay">
+        </form>
+    </div>
+
+</body>
+</html>

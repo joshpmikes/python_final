@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'oneapp/css/style.css' %}">
+    <title>Order Page</title>
+</head>
+<body>
+    <div class = 'wrapper'>
+        <div class = 'header'>
+            <nav>
+                <div class="nav-wrapper">
+                    <a href="#!" class="brand-logo">Dashboard</a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="/main">Orders</a></li>
+                    <li><a href="/admin_products">Products</a></li>
+                    <li><a href="/logout">Log off</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class = 'orderbox'>
+            <p>A lot</p>
+            <p>of stuff</p>
+            <p>about</p>
+            <p>customer shipping</p>
+            <p>jgf</p>
+            <p>jhgfjhf</p>
+            <p>jhgfjhgfjhgf</p>
+            <p>jhgfjhgfhjf</p>
+        </div>
+        <div class ='subwrap'>
+            <div class= 'box'>
+                <table class = "table table-hover">
+                    <thead>
+                        <td>Order Id</td>
+                        <td>Item</td>
+                        <td>Price</td>
+                        <td>Quantity</td>
+                        <td>Total</td>
+                    </thead>
+                    <tbody>
+                        <tr scope = "row">
+                            <td>{{all_products.id }}</td>
+                            <td>{{all_products.name}}</td>
+                            <td>{{all_products.date}}</td>
+                            <td>{{all_products.billing_address}}</td>
+                            <td>{{all_products.total}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class = 'status'>
+                Status: {{all_products.status}}
+            </div>
+            <div class= 'box'>
+                <p>subtotal:</p>
+                <p>shipping:</p>
+                <p>total price:</p>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+</body>
+</html>

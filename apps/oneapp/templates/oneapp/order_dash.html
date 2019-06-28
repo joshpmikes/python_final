@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'oneapp/css/style.css' %}">
+    <title>Admin Dashboard</title>
+</head>
+<body>
+    <div class = 'wrapper'>
+        <div class = 'header'>
+            <nav>
+                <div class="nav-wrapper">
+                    <a href="#!" class="brand-logo">Dashboard</a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="/order_dash">Orders</a></li>
+                    <li><a href="/admin_products">Products</a></li>
+                    <li><a href="/logout">Log off</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class= 'box'>
+            <table class = "table table-hover">
+                <thead>
+                    <td>Order Id</td>
+                    <td>Name</td>
+                    <td>Date</td>
+                    <td>Billing Address</td>
+                    <td>Total</td>
+                    <td>Status</td>
+                </thead>
+                <tbody>
+                    {% for order in all_orders %}
+                    <tr scope = "row">
+                        <td><a href ='/order_show/{{order.id}}'>{{ order.id }}</a></td>
+                        <td>{{order.bfirst_name}}</td>
+                        <td>{{order.date}}</td>
+                        <td>{{order.baddress}}</td>
+                        <td>{{order.total}}</td>
+                        <form action="/update_stat" method="post">
+                            {% csrf_token %}
+                        <td><select name = 'select_status'>
+                            <option value="Order in process">Order in process</option>
+                            <option value="Shipped">Shipped</option>
+                            <option value="Cancelled">Cancelled</option>
+                            </select>
+                        </td>
+                        </form>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type= 'text/javascript' src="{% static 'oneapp/js/script.js' %}"></script>
+</body>
+</html>

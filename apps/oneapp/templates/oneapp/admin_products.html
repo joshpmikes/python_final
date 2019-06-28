@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+
+    {% load static %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'oneapp/css/style.css' %}">
+    <title>Admin Dashboard</title>
+</head>
+<body>
+    <div class = 'wrapper'>
+            <nav>
+                <div class="nav-wrapper">
+                    <a href="#!" class="brand-logo">Dashboard</a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="/order_dash">Orders</a></li>
+                    <li><a href="/admin_products">Products</a></li>
+                    <li><a href="/logout">Log off</a></li>
+                    </ul>
+                </div>
+            </nav>
+        <div class= 'box'>
+            <table class = "table table-hover">
+                <thead>
+                    <td>Picture</td>
+                    <td>Id</td>
+                    <td>Name</td>
+                    <td>Inventory Count</td>
+                    <td>Sold</td>
+                    <td>Action</td>
+                </thead>
+                <tbody>
+                    {% for product in all_products %}
+                    <tr scope = "row">
+                        <td>picture placeholder</td>
+                        <td>{{product.id}}</td>
+                        <td>{{product.name}}</td>
+                        <td>{{product.inventory}}</td>
+                        <td>Quantity sold</td>
+                        <td><a class="waves-effect waves-red darken 1 btn modal-trigger" href="#modal1">edit</a> 
+                            <div id="modal1" class="modal">
+                                <div class="modal-content">
+                                    <h4>Modal Header</h4>
+                                    <p>A bunch of text</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                                </div>
+                            </div> </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>      
+    </div>
+
+    <script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type= 'text/javascript' src="{% static 'oneapp/js/script.js' %}"></script>
+</body>
+</html>
